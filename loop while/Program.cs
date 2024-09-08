@@ -4,28 +4,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace loop_while
+namespace while_loop
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("insert 2 number a and b ");
-            int a = int.Parse(Console.ReadLine());
-            int b = int.Parse(Console.ReadLine());
-            int count = 0;
-            
-            while (a>b)
-            {
-                a = a - b;
-                count++;
-               
-                
-            }
-                Console.WriteLine($"sharit {a}");
-            Console.WriteLine($"count {count}");
 
             Console.ReadLine();
+        }
+        static void targil1()
+        {
+            Console.WriteLine("insert positive number ");
+            int numzogi = 0; // מונה לספור כמה מספרים יש זוגיים
+            int numezogi = 0;
+            int num = int.Parse(Console.ReadLine());
+            int sum = 0;
+            while (num > 0)
+            {
+                int digit = num % 10;
+                if (digit % 2 == 0)
+                {
+                    numzogi++;
+                }
+                else numezogi++;
+                sum = sum + digit;
+                num = num / 10;
+            }
+            int max = Math.Max(numzogi, numezogi);
+            Console.WriteLine($"numbers of zogi is {numzogi}");
+            Console.WriteLine($"numbers of ezogi is {numezogi}");
+            Console.WriteLine($"number of all the digit togther is {sum}");
+            if (numzogi == numezogi)
+                Console.WriteLine($"the zogi and ezogi is the same amount {max}");
+            else
+                Console.WriteLine($"the best is {max}");
+            Console.ReadLine();
+        }
+        static void targil2()
+        {
+            Console.WriteLine("enter a positive number");
+            int num = int.Parse(Console.ReadLine());
+            int n = 2;
+            int count = 1;
+            while (n < num)
+            {
+                count++;
+                n = n * 2;
+            }
+            Console.WriteLine($"the number that it more then your num by multi 2 is  {n}");
+            Console.WriteLine($"the amount of times it took is {count}");
         }
         static void targil3()
         {
@@ -41,5 +69,60 @@ namespace loop_while
                 }
             }
         }
+        static void targil4()
+        {
+            Console.WriteLine("insert 2 number a and b ");
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int count = 0;
+
+            while (a > b)
+            {
+                a = a - b;
+                count++;
+
+
+            }
+            Console.WriteLine($"sharit {a}");
+            Console.WriteLine($"count {count}");
+        }
+        static void targil5()
+        {
+            Console.WriteLine("insert positive number");
+            int num = int.Parse(Console.ReadLine());
+            int n = 2;
+            while (n <= num)
+            {
+                if (num % n == 0)
+                {
+                    Console.WriteLine(n);
+                }
+                n++;
+            }
+        }
+        static void targil6()
+        {
+            Console.WriteLine("insert positive number");
+            int num = int.Parse(Console.ReadLine());
+            int min = 10;
+            int max = 0;
+            int n = 0;
+            while (num > 0)
+            {
+                n = num % 10;
+                if (max < n)
+                {
+                    max = n;
+                }
+                if (min > n)
+                {
+                    min = n;
+                }
+                num = num / 10;
+            }
+            Console.WriteLine($"max is {max}");
+            Console.WriteLine($"min is {min}");
+        }
     }
 }
+ 
