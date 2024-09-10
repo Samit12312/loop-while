@@ -11,6 +11,8 @@ namespace while_loop
         static void Main(string[] args)
         {
 
+
+
             Console.ReadLine();
         }
         static void targil1()
@@ -122,6 +124,29 @@ namespace while_loop
             }
             Console.WriteLine($"max is {max}");
             Console.WriteLine($"min is {min}");
+        }
+        static void targil7()
+        {
+            Console.WriteLine("insert 2 positive number");
+            int num1 = int.Parse(Console.ReadLine());
+            int num2 = int.Parse(Console.ReadLine());
+            int n = 2;
+            int max = 0;
+            bool tof = true; // means true or false
+            while (tof)
+            {
+                if (num1 % n == 0 && num2 % n == 0)
+                {
+                    max = n;
+                }
+                n++;
+                if (n > num1 && n > num2)
+                {
+                    tof = false;
+                }
+            }
+            Console.WriteLine(max);
+
         }
     }
 }
