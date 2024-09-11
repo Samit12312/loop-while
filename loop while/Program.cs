@@ -10,8 +10,7 @@ namespace while_loop
     {
         static void Main(string[] args)
         {
-
-
+            Console.Write("insert positive number");
 
             Console.ReadLine();
         }
@@ -146,6 +145,61 @@ namespace while_loop
                 }
             }
             Console.WriteLine(max);
+
+        }
+        static void targil8()
+        {
+            Console.WriteLine("insert positive number to keep the numbers nagative number to stop");
+            int count1 = 0;
+            int count2 = 0;
+            bool tof = true; // tof stands for true or false
+            while (tof)
+            {
+                int num = int.Parse(Console.ReadLine());
+                if (num < 0)
+                    tof = false;
+                if (num < 10 && num >= 0)
+                    count1++;
+                if (num > 9) count2++;
+            }
+            if (count2 > 0)
+            {
+                Console.WriteLine("not all numbers were one number");
+            }
+            else
+            {
+                Console.WriteLine($"every number was one number");
+            }
+        }
+        static void targil9()
+        {
+
+        }
+        static void targil10()
+        {
+            Console.WriteLine("insert 50 positive numbers");
+            int i = 1;
+            int count = 0;
+            int zogicount = 0;
+            int n = 0;
+            int a = 0;
+            while (i <= 50)
+            {
+                int num = int.Parse(Console.ReadLine());
+                while (num > 0)
+                {
+                    n = num % 10;
+                    num = num / 10;
+                    a = n + num;
+                    if (a % 2 == 0) zogicount++;
+                    else
+                        count++;
+                    a = 0;
+                    n = 0;
+
+                }
+                Console.WriteLine(count);
+            }
 
         }
     }
