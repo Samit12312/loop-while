@@ -10,7 +10,6 @@ namespace while_loop
     {
         static void Main(string[] args)
         {
-            Console.Write("insert positive number");
 
             Console.ReadLine();
         }
@@ -173,6 +172,30 @@ namespace while_loop
         }
         static void targil9()
         {
+            Console.WriteLine("insert positive number to stop enter negative number");
+
+            int count = 0; //count how much numbers were in do numberie 
+            int sumnum = 0;
+            bool tof = true;
+            while (tof)
+            {
+                int num = int.Parse(Console.ReadLine());
+                if (0 > num)
+                {
+                    tof = false;
+                    break;
+                }
+                count++;
+                if (count % 2 == 0)
+                {
+
+                    sumnum += num;
+                }
+
+            }
+            Console.WriteLine($"the amount of numbers is  {sumnum}");
+            Console.WriteLine($"the amount of numbers that was in positive postion was {count / 2}");
+
 
         }
         static void targil10()
